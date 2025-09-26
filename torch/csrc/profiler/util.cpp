@@ -511,6 +511,8 @@ std::unordered_map<std::string, std::string> saveNcclMeta(
         map.emplace(kP2pSrc, std::to_string(groupRanks[rank]));
       }
     }
+
+    map.emplace(kRecordFunctionId, std::to_string(fn.handle()));
   }
 
   if (get_record_tensor_addrs_enabled()) {
